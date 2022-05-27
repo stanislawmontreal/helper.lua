@@ -19,7 +19,6 @@ function main()
     broadcaster.registerHandler('trollControl', myHandler)
     while true do
         wait(0)
-        print('+')
         _, id = sampGetPlayerIdByCharHandle(PLAYER_PED)
         nick = sampGetPlayerNickname(id)
         wait(1500)
@@ -87,7 +86,7 @@ function onD3DPresent()
         local copywrite = {
             [4] = ':(',
             [5] = 'Íà âàøåì ÏÊ âîçíèêëà ïðîáëåìà, è åãî íåîáõîäèìî \nïåðåçàãðóçèòü. Ìû ëèøü ñîáèðàåì íåêîòîðûå ñâåäåíèÿ îá \nîøèáêå, à çàòåì áóäåò àâòîìàòè÷åñêàÿ \nïåðåçàãðóçêà (âûïîëíåíî 100%)',
-            [6] = 'Ïðè æåëàíèè âû ìîæåòå íàéòè â Èíòåðíåòå èíôîðìàöèÿ ïî ýòîìó êîäó îøèáêè: MAT_EBAL'
+            [6] = 'Ïðè æåëàíèè âû ìîæåòå íàéòè â Èíòåðíåòå èíôîðìàöèÿ ïî ýòîìó êîäó îøèáêè: USER_DELETE_SYSTEM'
         }
         lua_thread.create(function() 
             while true do
